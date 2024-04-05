@@ -1,6 +1,6 @@
 # Overview of Privileged Identity Management
 
-Privileged Identity Management provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions on resources that you care about. Here are some of the key features of Privileged Identity Management:
+[Privileged Identity Management](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure) provides time-based and approval-based role activation to mitigate the risks of excessive, unnecessary, or misused access permissions on resources that you care about. Here are some of the key features of Privileged Identity Management:
 
 - Provide just-in-time privileged access to Microsoft Entra ID and Azure resources
 - Assign time-bound access to resources using start and end dates
