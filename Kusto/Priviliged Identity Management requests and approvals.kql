@@ -2,9 +2,11 @@
 // Categories: Audit
 // Resource types: Microsoft Entra ID
 
+let daterange = 30d;
 AuditLogs
 | where LoggedByService == "PIM"
 | where OperationName == "Add member to role completed (PIM activation)"
+| where TimeGenerated > ago(daterange)
 | project 
     TimeGenerated, 
     Reason = ResultReason, 
@@ -19,7 +21,7 @@ AuditLogs
     CorrelationId
 | join kind=leftouter  (
     AuditLogs
-        | where TimeGenerated > ago(30d)
+        | where TimeGenerated > ago(daterange)
         | where LoggedByService == "PIM"
         | where OperationName == "Add member to role request approved (PIM activation)"
         | project CorrelationId, Approval = ResultDescription, Approver = Identity, Approved = Result) 
